@@ -1,0 +1,8 @@
+@use "./clearfix";
+@use "./variables";
+@use "./custom";
+
+body{
+  background-color: variables.$cornsilk;
+  color: variables.$space-cadet;
+}

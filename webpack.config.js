@@ -8,6 +8,7 @@ module.exports = {
   entry: {
     app: {
       import: "./src/app.js",
+      filename: "app.bundle[contenthash].js"
     }
   },
 
@@ -49,6 +50,16 @@ module.exports = {
     new HTML_WEBPACK_PLUGIN({
       template: "./src/htmlTemplates/index.html",
       filename: "index.html",
+      title: "WEB TEMPLATE 001"
+    }),
+    new HTML_WEBPACK_PLUGIN({
+      template: "./src/htmlTemplates/about.html",
+      filename: "about.html",
+      title: "WEB TEMPLATE 001"
+    }),
+    new HTML_WEBPACK_PLUGIN({
+      template: "./src/htmlTemplates/contact.html",
+      filename: "contact.html",
       title: "WEB TEMPLATE 001"
     }),
     new MINI_CSS_EXTRACT_PLUGIN({})

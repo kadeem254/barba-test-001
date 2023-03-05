@@ -1,0 +1,116 @@
+@use "./variables";
+
+// TRANSITION CONTAINER
+.transition-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+
+  background-color: variables.$hunter-green;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  &[data-state="hidden"]{
+    display: none;
+    visibility: hidden;
+    .loader {
+      animation-play-state: paused;
+    }
+  }
+
+}
+
+// LOADER-1
+
+.loader-1 {
+  color: variables.$tea-green;
+  font-size: 45px;
+  text-indent: -9999em;
+  overflow: hidden;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  transform: translateZ(0);
+
+  &[data-animation-state="playing"]{
+    animation: loader-1-mltShdSpin 1.7s infinite ease, loader-1-round 1.7s infinite ease;
+  }
+}
+
+@keyframes loader-1-mltShdSpin {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em,
+    0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em,
+    0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 
+    0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 
+    0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, 
+    -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, 
+    -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em,
+     -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, 
+     -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em,
+     -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, 
+     -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 
+    0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+
+@keyframes loader-1-round {
+  0% { transform: rotate(0deg) }
+  100% { transform: rotate(360deg) }
+}
+
+// PAGE NAVIGATION
+.page-navigation{
+  width: 100%;
+  padding: 1rem 0 .75rem;
+  
+  background-color: variables.$space-cadet;
+  color: variables.$tea-green;
+
+  .navigation-links{
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+
+    .navlink{
+      display: block;
+      width: fit-content;
+      padding: .25rem .5rem;
+
+      font-size: 1.5em;
+      border-bottom: 1px solid transparent;
+
+      &:hover{
+        border-color: variables.$tea-green;
+      }
+    }
+  }
+}
